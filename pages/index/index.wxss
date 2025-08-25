@@ -1,0 +1,27 @@
+/* /pages/index/index.wxss */
+.container {
+  background: #ffffff;
+  min-height: 100vh;
+}
+.banner {
+  width: 100%;
+  overflow: hidden;
+}
+.banner-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.notice-container {
+  margin: 0 0px 4px 0px; /* 进一步缩小间距 */
+}
+.grid-container {
+  margin: 0 0px 8px 0px; /* 缩小左右间距 */
+}
+.van-grid {
+  border: 6px solid #f5f7fa !important;
+}
+.van-grid-item__text {
+  font-size: 13px; /* 缩小文字 */
+  margin-top: 6px; /* 缩小图标与文字间距 */
+}

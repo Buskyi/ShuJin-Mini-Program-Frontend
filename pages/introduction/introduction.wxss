@@ -1,0 +1,28 @@
+/* 容器 */
+.container {
+  padding: 20px;
+  line-height: 1;
+}
+
+/* 标题 */
+.page-title {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 8px;
+  color: #8B0000; /* 深红色 */
+}
+
+.subtitle {
+  font-size: 16px;
+  text-align: center;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.paragraph {
+  margin-bottom: 10rpx;
+  text-indent: 2em;
+  line-height: 1.8;
+  font-size: 15px;
+}

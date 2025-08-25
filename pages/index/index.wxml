@@ -1,0 +1,70 @@
+<!-- /pages/index/index.wxml -->
+<view class="container">
+  <view class="banner">
+    <swiper 
+      autoplay 
+      indicator-dots 
+      circular
+      indicator-color='rgba(255, 255, 255, 0.5)' 
+      indicator-active-color='#07c160' 
+      interval='3000'
+      style="height: 200px;"
+    >
+      <swiper-item wx:for="{{banner_list}}" wx:key="index">
+        <image 
+          src="{{item.img}}" 
+          mode="aspectFill"
+          class="banner-image" 
+        />
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class="notice-container">
+    <van-notice-bar 
+      left-icon="volume-o" 
+      text="{{notice}}" 
+      background="#f5f7fa" 
+      color="#333"
+    />
+  </view>
+  <view class="grid-container">
+    <van-grid column-num="2" border="{{true}}" clickable>
+      <van-grid-item 
+        icon="play-circle-o" 
+        link-type="navigateTo" 
+        url="/pages/game/game" 
+        text="游戏" 
+        icon-color="#07c160"
+        icon-size="20px"
+        custom-class="compact-item"
+      />
+      <van-grid-item 
+        icon="friends-o" 
+        link-type="navigateTo" 
+        url="/pages/channel/channel" 
+        text="公告" 
+        icon-color="#07c160"
+        icon-size="20px"
+        custom-class="compact-item"
+      />
+      <van-grid-item 
+        icon="bookmark-o" 
+        link-type="navigateTo" 
+        url="/pages/books/books" 
+        text="条目辑录" 
+        icon-color="#07c160"
+        icon-size="20px"
+        custom-class="compact-item"
+      />
+      <van-grid-item 
+        icon="photo-o" 
+        link-type="navigateTo" 
+        url="/pages/photoshow/photoshow" 
+        text="图片展示" 
+        icon-color="#07c160"
+        icon-size="20px"
+        custom-class="compact-item"
+      />
+    </van-grid>
+  </view>
+</view>

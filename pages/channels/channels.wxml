@@ -1,0 +1,27 @@
+<!-- /pages/channels/channels.wxml -->
+<view class="container">
+  <van-cell
+    title="蜀锦简介"
+    is-link
+    icon="info-o"
+    url="/pages/introduction/introduction"
+    custom-class="custom-cell"
+  />
+  <van-cell
+    title="特别鸣谢"
+    is-link
+    icon="like-o"
+    url="/pages/thanks/thanks"
+    custom-class="custom-cell"
+  />
+  <view class="contact-wrapper">
+    <button open-type="contact" class="hidden-button" id="contactBtn"></button>
+    <van-cell
+      title="联系客服"
+      is-link
+      icon="service-o"
+      custom-class="custom-cell contact-cell"
+      bind:tap="ContactService"
+    />
+  </view>
+</view>

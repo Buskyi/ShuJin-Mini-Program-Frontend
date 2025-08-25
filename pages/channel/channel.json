@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "van-card": "@vant/weapp/card/index",
+    "van-loading": "@vant/weapp/loading/index",
+    "van-empty": "@vant/weapp/empty/index",
+    "van-divider": "@vant/weapp/divider/index",
+    "van-icon": "@vant/weapp/icon/index"
+  },
+  "navigationBarTitleText": "频道",
+  "enablePullDownRefresh": true
+}

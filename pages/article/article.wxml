@@ -1,0 +1,16 @@
+<!-- /pages/article/article.wxml -->
+<view class="container">
+  <view class="article-card">
+    <view class="article-title">{{ article.title }}</view>
+    <view class="article-summary" wx:if="{{ article.summary }}">
+      {{ article.summary }}
+    </view>
+    <view class="article-content">
+      <rich-text nodes="{{ formattedContent }}"></rich-text>
+    </view>
+  </view>
+  <view class="back-button" bindtap="onBack">
+    <van-icon name="arrow-left" size="20px" color="#666" />
+    <text class="back-text">返回</text>
+  </view>
+</view>

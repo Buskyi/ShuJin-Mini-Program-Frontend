@@ -1,0 +1,56 @@
+<!-- /pages/game/game.wxml -->
+<view class="game-container">
+  <!-- 加载状态 -->
+  <view wx:if="{{loading}}" class="loading-mask">
+    <image src="/images/loading.gif" mode="aspectFit" class="loading-icon" />
+    <text>加载中...</text>
+  </view>
+  <!-- 游戏信息 -->
+  <view class="game-info">
+    <text>时间: {{timeLeft}}秒</text>
+    <text class="score {{scoreChanged ? 'score-change' : ''}}">分数: {{score}}</text>
+  </view>
+  <!-- 游戏板块 -->
+  <view class="game-board">
+    <view class="card-column image-column">
+      <block wx:for="{{imageCards}}" wx:key="id">
+        <view 
+          class="card image-card {{item.matched ? 'matched' : ''}} {{item.selected ? 'selected' : ''}} {{item.animate}}"
+          bindtap="handleCardTap" 
+          data-index="{{index}}"
+          data-type="image"
+        >
+          <image 
+            class="card-image" 
+            src="{{item.image}}" 
+            mode="aspectFill" 
+            binderror="handleImageError" 
+          />
+        </view>
+      </block>
+    </view>
+    <view class="card-column name-column">
+      <block wx:for="{{nameCards}}" wx:key="id">
+        <view 
+          class="card name-card {{item.matched ? 'matched' : ''}} {{item.selected ? 'selected' : ''}} {{item.animate}}"
+          bindtap="handleCardTap" 
+          data-index="{{index}}"
+          data-type="name"
+        >
+          <text class="card-name">{{item.name}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+  <!-- 游戏结束弹窗 -->
+  <view class="modal" wx:if="{{gameOver}}">
+    <view class="modal-content">
+      <text class="title">游戏结束</text>
+      <text class="score">你的得分: {{score}}</text>
+      <view class="buttons">
+        <button bindtap="restartGame" class="restart-btn">再来一局</button>
+        <button bindtap="exitGame" class="exit-btn">退出游戏</button>
+      </view>
+    </view>
+  </view>
+</view>

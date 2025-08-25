@@ -1,0 +1,60 @@
+<!-- /pages/channel/channel.wxml -->
+<view class="container">
+  <block wx:for="{{tweets}}" wx:key="id">
+    <van-card 
+      custom-class="tweet-card" 
+      bind:tap="navigateToDetail" 
+      data-id="{{item.id}}"
+    >
+      <view slot="thumb" wx:if="{{item.avatar}}" class="avatar-container">
+        <image src="{{item.avatar}}" class="avatar" mode="aspectFill" />
+      </view>
+      <view slot="title" class="tweet-header">
+        <view class="header-left">
+          <text class="tweet-author">{{item.author}}</text>
+          <text class="tweet-tag" wx:if="{{item.official}}">官方</text>
+        </view>
+        <text class="tweet-time">{{item.time}}</text>
+      </view>
+      <view slot="desc" class="tweet-content">
+        <text class="content-text">{{item.content}}</text>
+        <view class="image-grid" wx:if="{{item.images}}">
+          <block wx:for="{{item.images}}" wx:key="index">
+            <image 
+              src="{{item}}" 
+              class="grid-image" 
+              mode="aspectFill" 
+              bind:tap="previewImage" 
+              data-index="{{index}}"
+            />
+          </block>
+        </view>
+      </view>
+      <view slot="footer" class="action-bar">
+        <view class="action-item">
+          <van-icon name="like-o" size="16px" color="#666" />
+          <text class="action-text">{{item.likeCount || 0}}</text>
+        </view>
+        <view class="action-item">
+          <van-icon name="comment-o" size="16px" color="#666" />
+          <text class="action-text">{{item.commentCount || 0}}</text>
+        </view>
+      </view>
+    </van-card>
+    <van-divider custom-class="custom-divider" />
+  </block>
+  <view wx:if="{{isLoading}}" class="loading-container">
+    <van-loading type="spinner" size="24px" color="#07c160" />
+    <text class="loading-text">正在加载更多...</text>
+  </view>
+  <view wx:if="{{!hasMore && tweets.length > 0}}" class="end-container">
+    <text class="end-text">已经到底啦～</text>
+  </view>
+  <van-empty 
+    wx:if="{{tweets.length === 0 && !isLoading}}" 
+    description="暂无内容" 
+    image="/images/empty-state.png"
+  >
+    <text class="empty-tip">去发布第一条动态吧～</text>
+  </van-empty>
+</view>

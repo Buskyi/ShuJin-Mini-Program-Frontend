@@ -1,0 +1,31 @@
+<!-- /pages/books/books.wxml -->
+<view class="container">
+  <van-search
+    value="{{ searchKeyword }}"
+    placeholder="请输入关键词搜索文章"
+    show-action
+    bind:search="onSearch"
+    bind:change="onSearchInput"
+  >
+    <view slot="action" bindtap="onSearch">搜索</view>
+  </van-search>
+  <view class="article-list">
+    <block wx:for="{{ articles }}" wx:key="id">
+      <van-card
+        title="{{ item.title }}"
+        use-slot
+        bind:tap="onArticleTap"
+        data-id="{{ item.id }}"
+      >
+        <view slot="desc" class="article-summary-container">
+          <view class="article-summary {{ item.isExpanded ? 'expanded' : 'collapsed' }}">
+            <rich-text nodes="{{ item.processedSummary }}"></rich-text>
+          </view>
+          <view wx:if="{{ item.showExpandButton }}" class="expand-button" catchtap="toggleExpand" data-id="{{ item.id }}">
+            {{ item.isExpanded ? '收起' : '展开' }}
+          </view>
+        </view>
+      </van-card>
+    </block>
+  </view>
+</view>

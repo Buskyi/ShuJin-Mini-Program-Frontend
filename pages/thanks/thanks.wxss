@@ -1,0 +1,36 @@
+/* 容器 */
+.container {
+  padding: 20px;
+  line-height: 1;
+}
+
+/* 标题 */
+.page-title {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 14px;
+  color: #8B0000; /* 深红色 */
+}
+
+.subtitle {
+  font-size: 13px;
+  text-indent: 2em;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+.paragraph {
+  margin-bottom: 10rpx;
+  text-indent: 2em;
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+.notes {
+  margin-bottom: 10rpx;
+  text-indent: 2em;
+  line-height: 1.8;
+  font-size: 12px;
+}

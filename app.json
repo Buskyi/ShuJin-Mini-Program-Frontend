@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/welcome/welcome",
+    "pages/index/index",
+    "pages/channel/channel",
+    "pages/channels/channels",
+    "pages/books/books",
+    "pages/article/article",
+    "pages/tweet-detail/tweet-detail",
+    "pages/game/game",
+    "pages/introduction/introduction",
+    "pages/thanks/thanks",
+    "pages/photoshow/photoshow"
+  ],
+  "window": {
+    "navigationBarTitleText": "锦上云梭",
+    "navigationBarBackgroundColor": "#fff",
+    "enablePullDownRefresh": true,
+    "backgroundColor": "#FFFFFF",
+    "backgroundTextStyle": "dark",
+    "navigationBarTextStyle": "black"
+  },
+  "usingComponents": {},
+  "tabBar": {
+    "selectedColor": "#",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/icon/home.png",
+        "selectedIconPath": "images/icon/home_select.png"
+      },
+      {
+        "pagePath": "pages/channels/channels",
+        "text": "其他",
+        "iconPath": "images/icon/channel.png",
+        "selectedIconPath": "images/icon/channel_select.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

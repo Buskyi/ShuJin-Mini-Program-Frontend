@@ -1,0 +1,46 @@
+<!-- /pages/tweet-detail/tweet-detail.wxml -->
+<view class="container">
+  <view wx:if="{{isLoading}}" class="loading-container">
+    <text>加载中...</text>
+  </view>
+  <view wx:if="{{error}}" class="error-container">
+    <text>{{error}}</text>
+    <button bind:tap="retryLoad">重试</button>
+  </view>
+  <view wx:if="{{!isLoading && !error}}" class="tweet-card">
+    <view class="avatar-container" wx:if="{{tweet.avatar}}">
+      <image src="{{tweet.avatar}}" class="avatar" mode="aspectFill" />
+    </view>
+    <view class="tweet-header">
+      <view class="header-left">
+        <text class="tweet-author">{{tweet.author}}</text>
+        <view class="official-tag" wx:if="{{tweet.official}}">官方</view>
+      </view>
+      <text class="tweet-time">{{tweet.time}}</text>
+    </view>
+    <view class="tweet-content">
+      <text class="content-text">{{tweet.content}}</text>
+      <view class="image-grid" wx:if="{{tweet.images}}">
+        <block wx:for="{{tweet.images}}" wx:key="index">
+          <image 
+            src="{{item}}" 
+            class="grid-image" 
+            mode="aspectFill" 
+            bind:tap="previewImage" 
+            data-index="{{index}}"
+          />
+        </block>
+      </view>
+    </view>
+    <view class="action-bar">
+      <view class="action-item" bind:tap="handleLike">
+        <van-icon name="like-o" size="16px" color="#666" />
+        <text class="action-text">{{tweet.likeCount || 0}}</text>
+      </view>
+      <view class="action-item" bind:tap="handleComment">
+        <van-icon name="comment-o" size="16px" color="#666" />
+        <text class="action-text">{{tweet.commentCount || 0}}</text>
+      </view>
+    </view>
+  </view>
+</view>

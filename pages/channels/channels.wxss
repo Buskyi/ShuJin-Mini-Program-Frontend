@@ -1,0 +1,44 @@
+/* /pages/channels/channels.wxss */
+.container {
+  padding: 20px;
+  padding-top: 40px; /* 增加顶部内边距，让内容偏上 */
+  background-color: #f8f8f8;
+  height: 100vh; /* 让页面占满整个屏幕高度 */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* 垂直居中 */
+}
+.custom-cell {
+  margin-bottom: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 24px 16px; /* 增加内边距 */
+  font-size: 18px; /* 增大字体 */
+  background-color: #ffffff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* 添加过渡效果 */
+}
+.custom-cell:active {
+  transform: scale(0.98); /* 点击时稍微缩小 */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 点击时阴影变小 */
+}
+.custom-cell .van-cell__left-icon {
+  font-size: 24px; /* 增大图标 */
+  margin-right: 12px; /* 调整图标与文字的间距 */
+}
+.contact-wrapper {
+  position: relative;
+  overflow: visible;
+}
+.hidden-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 1;
+}
+.contact-cell {
+  position: relative;
+  z-index: 0;
+}
